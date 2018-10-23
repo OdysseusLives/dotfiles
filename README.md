@@ -1,3 +1,3 @@
-# Danny's dotfiles
+# Dotfiles
 
-My dotfiles repository for https://github.com/DanielThomas/oh-your-dotfiles.
+Fork of dotfiles repository for https://github.com/DanielThomas/oh-your-dotfiles.

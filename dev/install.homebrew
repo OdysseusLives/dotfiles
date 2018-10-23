@@ -30,5 +30,6 @@ python@3.9
 redis
 ruby
 rust
+tomcat
 shellcheck
 yarn

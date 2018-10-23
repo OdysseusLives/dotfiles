@@ -1,3 +1,5 @@
+[include]
+    path = ~/.gitconfig_local
 [core]
     excludesfile = ~/.gitignore_global
     pager = "diff-so-fancy | less --tabs=4 -RFX"
@@ -26,7 +28,7 @@
     process = git-lfs filter-process
     required = true
 [alias]
-    aliases = config --get-regexp alias 
+    aliases = config --get-regexp alias
 
     # common commands
     ai = add --interactive
@@ -41,7 +43,7 @@
     cma = commit -a -m
     ca = commit --amend
     commend = commit --amend --no-edit
-    
+
     pm = push origin master
     ppm = !git pull --rebase && git push origin master
     mppm = !git checkout master && git merge develop master && git ppm && git checkout develop
@@ -49,7 +51,7 @@
     please = push --force-with-lease
     purr = pull --rebase
     pt = !sh -c 'git tag $1 && git push --atomic origin $(git branch --show-current) $1' -
-    
+
     cl = clean
     clb = !git branch -d $(git branch --merged | sed '/master/d' | sed '/*/d') && git remote prune origin
 
@@ -60,6 +62,10 @@
 
     # list commands
     le = log --oneline --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate --stat
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate --date=relative
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --stat
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
@@ -74,10 +80,10 @@
     diff = diff --word-diff
     d = diff --word-diff
     dc = diff --cached
-    
+
     #list modified files in last commit
     dl = "!git ll -1"
-    
+
     #diff last commit
     dlc = diff --cached HEAD^
     dr  = "!f() { git diff "$1"^.."$1"; }; f"
@@ -111,7 +117,7 @@
     #assume aliases
     assume = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
-    
+
     #show assumed files
     assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
@@ -129,3 +135,5 @@
     #grumble
     ffs = "!git all && git commit --amend"
 
+    #show tags
+    tagsbydate = "log --tags --simplify-by-decoration --pretty=format:'%C(yellow)%ai%Cred%d %Creset%s'"

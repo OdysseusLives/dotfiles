@@ -16,6 +16,8 @@ moreutils
 pkgdiff
 readline
 superbrothers/opener/opener
+sbt
+scala
 the_silver_searcher
 tree
 wget
