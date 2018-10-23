@@ -1,7 +1,7 @@
 [include]
-    path = /Users/dannyt/.gitconfig_local
+    path = ~/.gitconfig_local
 [core]
-    excludesfile = /Users/dannyt/.gitignore_global
+    excludesfile = ~/.gitignore_global
     pager = "diff-so-fancy | less --tabs=4 -RFX"
 [diff-so-fancy]
     markEmptyLines = false
@@ -53,6 +53,10 @@
 
     # list commands
     le = log --oneline --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate --stat
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn\\ <%ce>]" --decorate --date=relative
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --stat
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
@@ -121,3 +125,6 @@
 
     #grumble
     ffs = "!git all && git commit --amend"
+
+    #show tags
+    tagsbydate = "log --tags --simplify-by-decoration --pretty=format:'%C(yellow)%ai%Cred%d %Creset%s'"

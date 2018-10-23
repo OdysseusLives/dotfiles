@@ -16,6 +16,8 @@ osquery
 parallel
 pkgdiff
 readline
+sbt
+scala
 the_silver_searcher
 tree
 wget

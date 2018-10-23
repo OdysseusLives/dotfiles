@@ -26,4 +26,5 @@ python
 redis
 ruby
 rust
+tomcat
 yarn
