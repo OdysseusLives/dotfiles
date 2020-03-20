@@ -22,9 +22,11 @@ kotlin
 maven
 node
 pack
+pkg-config
 postgresql@14
 protobuf
 pstree
+romkatv/powerlevel10k/powerlevel10k
 pup
 python@3.9
 redis
