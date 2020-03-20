@@ -1,0 +1,5 @@
+#!/bin/bash
+# Pull & rebase for for all subdirectories
+set -e
+
+ls | xargs -I{} sh -c 'git -C {} remote -v; git -C {} pull --rebase'

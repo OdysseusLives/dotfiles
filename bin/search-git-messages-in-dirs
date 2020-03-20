@@ -1,0 +1,10 @@
+#!/bin/bash
+# Search all commit messages for an item, for for all subdirectories
+set -e
+
+SEARCH=$@
+
+echo "Search phrase: $SEARCH"
+echo "-----------"
+
+ls | xargs -I{} sh -c "git -C {} remote -v; git -C {} lds -30 --grep \"$SEARCH\""
